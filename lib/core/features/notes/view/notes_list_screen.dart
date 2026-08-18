@@ -1,7 +1,7 @@
 import 'package:clickclack/core/features/notes/model/note_list_item.dart';
 import 'package:clickclack/core/features/notes/view/note.dart';
+import 'package:clickclack/core/theme/app_text_style.dart';
 import 'package:flutter/material.dart';
-
 import 'note_detail_screen.dart';
 
 class NotesListScreen extends StatefulWidget {
@@ -19,14 +19,12 @@ class NotesListScreen extends StatefulWidget {
 }
 
 class _NotesListScreenState extends State<NotesListScreen> {
-  // Selected category circle — matches "#work" being highlighted in the design.
   NoteCategory selectedCategory = NoteCategory.work;
 
   @override
   Widget build(BuildContext context) {
     final filteredNotes =
         widget.notes.where((n) => n.category == selectedCategory).toList();
-
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
@@ -84,26 +82,19 @@ class _NotesListScreenState extends State<NotesListScreen> {
   Widget _buildHeader() {
     return Row(
       children: [
-        const CircleAvatar(
-          radius: 18,
-          backgroundColor: Colors.white24,
-          child: Icon(Icons.person, color: Colors.white, size: 18),
-        ),
+        Icon(Icons.person, color: Colors.white, size: 24),
+      
         const SizedBox(width: 10),
         RichText(
           text: TextSpan(
             children: [
-              const TextSpan(
+               TextSpan(
                 text: 'morning, ',
-                style: TextStyle(color: Colors.grey, fontSize: 16),
+                style: AppTextStyles.bodyLarge,
               ),
               TextSpan(
-                text: widget.userName,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
+                text: "Tahira",
+                style: AppTextStyles.headline4
               ),
             ],
           ),
@@ -120,12 +111,12 @@ class _NotesListScreenState extends State<NotesListScreen> {
       children: [
         const Expanded(
           child: Text(
-            'your\nnotes',
+            'Your\n      Notes',
             style: TextStyle(
               color: Colors.white,
               fontSize: 52,
-              height: 1.0,
-              fontWeight: FontWeight.w700,
+              height: 1.5,
+              fontWeight: FontWeight.w400,
             ),
           ),
         ),

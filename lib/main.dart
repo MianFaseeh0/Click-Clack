@@ -16,7 +16,7 @@ class NotesApp extends StatelessWidget {
       title: 'Notes',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'Roboto',
+        fontFamily: 'Quantico',
         useMaterial3: true,
       ),
       home: NotesListScreen(notes: sampleNotes),
@@ -24,7 +24,6 @@ class NotesApp extends StatelessWidget {
   }
 }
 
-// Sample data matching the design mock — 14 total notes, 3 shown for #work.
 final List<Note> sampleNotes = [
   Note(
     id: '1',
