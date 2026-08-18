@@ -36,12 +36,12 @@ class _NotesListScreenState extends State<NotesListScreen> {
               const SizedBox(height: 6),
               _buildHeader(),
               const SizedBox(height: 14),
-              Container(height: 1, color: Colors.white24),
+              // Container(height: 1, color: Colors.white24),
               const SizedBox(height: 18),
               _buildTitleRow(),
               const SizedBox(height: 20),
               _buildCategoryChips(),
-              const SizedBox(height: 8),
+              const SizedBox(height: 30),
               Container(height: 1, color: Colors.white24),
               Expanded(
                 child: filteredNotes.isEmpty
@@ -109,28 +109,26 @@ class _NotesListScreenState extends State<NotesListScreen> {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        const Expanded(
-          child: Text(
-            'Your\n      Notes',
+        const Text(
+            ' Your\n    Notes',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 52,
-              height: 1.5,
+              fontSize: 60,
+              height: 1.3,
               fontWeight: FontWeight.w400,
             ),
           ),
-        ),
+      const SizedBox(width: 40,),
         Padding(
-          padding: const EdgeInsets.only(bottom: 8, left: 6),
+          padding: const EdgeInsets.only(bottom: 5, right: 10),
           child: Text(
             '/${widget.notes.length}',
-            style: const TextStyle(color: Colors.grey, fontSize: 22),
+            style: const TextStyle(color: Colors.grey, fontSize: 35),
           ),
         ),
       ],
     );
   }
-
   Widget _buildCategoryChips() {
     return SizedBox(
       height: 44,
