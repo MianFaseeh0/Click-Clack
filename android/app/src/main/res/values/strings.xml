@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ClickClack</string>
+    <string name="accessibility_service_description">Lets ClickClack detect a 5-second volume-up hold to open quick capture, anywhere on your phone.</string>
+</resources>

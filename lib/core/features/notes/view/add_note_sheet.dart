@@ -131,7 +131,7 @@ class _AddNoteSheetState extends State<AddNoteSheet> {
               decoration: BoxDecoration(
                 color: CupertinoColors.black,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: CupertinoColors.systemGrey.withOpacity(0.3)),
+                border: Border.all(color: CupertinoColors.systemGrey.withValues(alpha: 0.3)),
               ),
             ),
             const SizedBox(height: 14),
@@ -142,7 +142,7 @@ class _AddNoteSheetState extends State<AddNoteSheet> {
                 decoration: BoxDecoration(
                   color: CupertinoColors.black,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: CupertinoColors.systemGrey.withOpacity(0.3)),
+                  border: Border.all(color: CupertinoColors.systemGrey.withValues(alpha: 0.3)),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -181,7 +181,7 @@ class _AddNoteSheetState extends State<AddNoteSheet> {
           decoration: BoxDecoration(
             color: CupertinoColors.black,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: CupertinoColors.systemGrey.withOpacity(0.3)),
+            border: Border.all(color: CupertinoColors.systemGrey.withValues(alpha: 0.3)),
           ),
           child: const Center(
             child: Column(

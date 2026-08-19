@@ -5,7 +5,6 @@ import 'package:clickclack/core/features/notes/view/add_note_sheet.dart';
 import 'package:clickclack/core/features/notes/view/note_detail_screen.dart';
 import 'package:clickclack/core/features/quick_capture/quick_capture_service.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 
 class NotesListScreen extends StatefulWidget {

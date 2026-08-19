@@ -4,7 +4,6 @@ import 'package:clickclack/core/features/notes/services/user_prefs_service.dart'
 import 'package:clickclack/core/features/notes/view/name.dart';
 import 'package:clickclack/core/features/notes/view/notes_list_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
