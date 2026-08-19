@@ -31,10 +31,10 @@ class NoteListItem extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 10),
                   child: Text(
                     '${index.toString().padLeft(2, '0')} /',
-                    style: const TextStyle(color: Colors.grey, fontSize: 14),
+                    style: const TextStyle(color: Colors.grey, fontSize: 18),
                   ),
                 ),
-                const SizedBox(width: 10),
+                const SizedBox(width: 20),
                 if (note.imagePath != null) ...[
                   ClipRRect(
                     borderRadius: BorderRadius.circular(8),
@@ -66,12 +66,12 @@ class NoteListItem extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 6),
+            const SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.only(left: 8),
               child: Text(
                 note.formattedDate,
-                style: const TextStyle(color: Colors.grey, fontSize: 13),
+                style: const TextStyle(color: Colors.grey, fontSize: 15),
               ),
             ),
             const SizedBox(height: 16),
