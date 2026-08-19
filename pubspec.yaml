@@ -20,21 +20,23 @@ version: 1.0.0+1
 
 environment:
   sdk: ^3.12.2
-
-# Dependencies specify other packages that your package needs in order to work.
-# To automatically upgrade your package dependencies to the latest versions
-# consider running `flutter pub upgrade --major-versions`. Alternatively,
-# dependencies can be manually updated by changing the version numbers below to
-# the latest version available on pub.dev. To see which dependencies have newer
-# versions available, run `flutter pub outdated`.
 dependencies:
   flutter:
     sdk: flutter
+  hyperion_core:
+    git:
+      url: https://github.com/MianFaseeh0/hyperion_core.git
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   google_fonts: ^8.2.1
+  animated_text_kit: ^4.3.0
+  flutter_riverpod: ^2.6.1
+  shared_preferences: ^2.5.5
+  hive: ^2.2.3
+  image_picker: ^1.2.3
+  hive_flutter: ^1.1.0
 
 dev_dependencies:
   flutter_test:
