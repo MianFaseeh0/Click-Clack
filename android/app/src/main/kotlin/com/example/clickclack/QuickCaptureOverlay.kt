@@ -4,6 +4,7 @@ import android.accessibilityservice.AccessibilityService
 import android.graphics.Color
 import android.graphics.PixelFormat
 import android.graphics.drawable.GradientDrawable
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -12,25 +13,13 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 
-/**
- * Shows/dismisses the quick-capture popup as a TYPE_ACCESSIBILITY_OVERLAY
- * window. That window type is specifically for active accessibility
- * services and does NOT require the separate "draw over other apps"
- * (SYSTEM_ALERT_WINDOW) permission — only an enabled AccessibilityService,
- * which the user already granted to get here.
- *
- * Deliberately skips the image field from AddNoteSheet — launching a
- * gallery picker from an accessibility overlay/service context isn't
- * reliable across OEMs. Attach an image later from inside the app instead.
- */
 object QuickCaptureOverlay {
-    // Must stay in the same order as NoteCategory in note_hive_model.dart —
-    // this index is written straight into the Hive-backed enum.
     private val categories = listOf("Instagram", "Screenshots", "TikTok")
 
     private var activeView: View? = null
 
     fun show(service: AccessibilityService) {
+        Log.d("QuickCapture", "showing overlay")
         if (activeView != null) return // already showing, ignore re-trigger
 
         val wm = service.getSystemService(AccessibilityService.WINDOW_SERVICE) as WindowManager
@@ -42,7 +31,7 @@ object QuickCaptureOverlay {
             setColor(Color.parseColor("#131313"))
             cornerRadius = 24f
         }
-        card.isClickable = true // swallow taps so they don't fall through to the dismiss scrim
+        card.isClickable = true
 
         val editText = root.findViewById<EditText>(R.id.quick_capture_text)
         val chipRow = root.findViewById<LinearLayout>(R.id.quick_capture_chip_row)
@@ -86,7 +75,7 @@ object QuickCaptureOverlay {
             activeView = null
         }
 
-        root.setOnClickListener { dismiss() } // tap outside the card
+        root.setOnClickListener { dismiss() }
 
         root.findViewById<View>(R.id.quick_capture_cancel).setOnClickListener { dismiss() }
         root.findViewById<View>(R.id.quick_capture_save).setOnClickListener {
